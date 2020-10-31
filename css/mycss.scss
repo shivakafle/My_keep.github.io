@@ -1,0 +1,281 @@
+ $my_font: Poppins;
+
+
+ * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   zoom: .98;
+ }
+
+ abbr[titl] {
+   position: relative;
+   text-decoration: none;
+ }
+
+ abbr[titl]:hover::after,
+ abbr[titl]:focus::after {
+   content: attr(titl);
+
+   /* position tooltip like the native one */
+   position: absolute;
+   left: 0;
+   bottom: -30px;
+   width: auto;
+   white-space: nowrap;
+
+   /* style tooltip */
+   background-color: #1e1e1e;
+   color: #fff;
+   border-radius: 3px;
+   box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.4);
+   font-size: 13px;
+   padding: 3px 10px;
+   font-family: Poppins;
+ }
+
+ .allpage {
+   width: 100%;
+
+ }
+
+ .inp {
+
+   width: 45%;
+   margin: auto;
+   box-shadow: 0px 0px 15px 2px rgba(0, 0, 0, 0.1);
+   margin-top: 50px;
+   padding: 20px;
+
+   input {
+     font-family: $my_font;
+     font-size: 15px;
+     width: 100%;
+     border: none;
+     outline: none;
+     padding: 5px 0;
+     font-weight: 600;
+     display: none;
+
+   }
+
+   .textarea {
+     display: block;
+     width: 100%;
+     overflow: hidden;
+     resize: none;
+     min-height: 40px;
+     line-height: 20px;
+     font-family: $my_font;
+     padding-top: 10px;
+     border: none;
+     outline: none;
+     font-size: 13px;
+   }
+
+   .textarea[contenteditable]:empty::before {
+     content: "Take a note...";
+     color: gray;
+   }
+
+   .btn_group {
+     display: none;
+   }
+
+   .font_btn {
+     display: flex;
+     justify-content: space-between;
+     margin-top: 30px;
+
+     .font {
+       width: 70%;
+       display: flex;
+       justify-content: space-between;
+
+       i {
+         color: rgb(102, 102, 102);
+         font-size: 14px;
+         width: 30px;
+         height: 30px;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         border-radius: 50%;
+         cursor: pointer;
+
+         &:hover {
+           background: rgb(233, 233, 233);
+         }
+
+
+       }
+     }
+
+
+
+     .btn button {
+       padding: 7px 25px;
+       border: none;
+       outline: none;
+       cursor: pointer;
+       background: #d8d8d8;
+       color: rgb(19, 31, 53);
+     }
+   }
+
+ }
+
+ .result {
+   width: 75%;
+   margin: auto;
+   display: flex;
+   flex-wrap: wrap;
+   margin-top: 50px;
+
+   .col {
+     width: 25%;
+
+   }
+
+
+
+   .inp_result {
+     flex: 300px;
+     margin: 20px 10px;
+     padding: 20px 20px 70px 20px;
+     flex-grow: 0;
+     box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+     border-radius: 10px;
+     position: relative;
+     cursor: pointer;
+
+
+     h4 {
+       margin-bottom: 10px;
+       font-family: $my_font;
+       font-size: 18px;
+       font-weight: 600;
+       word-wrap: warp;
+       word-break: break-word;
+
+       &::first-letter {
+         text-transform: uppercase;
+       }
+     }
+
+     p {
+       width: 100%;
+       font-family: inter;
+       line-height: 26px;
+       font-weight: 500;
+       word-wrap: warp;
+       word-break: break-word;
+
+       &::first-letter {
+         text-transform: capitalize;
+       }
+     }
+
+     .fa-check-circle {
+       display: none;
+       position: absolute;
+       top: -3%;
+       left: -5px;
+       font-size: 23px;
+       transition: all .23s ease;
+       font-weight: 900;
+     }
+
+
+
+     &:hover .fa-check-circle {
+       display: block;
+     }
+
+     .font_result {
+       display: none;
+       position: absolute;
+       bottom: 15px;
+       width: 80%;
+       display: flex;
+       justify-content: space-between;
+       color: #273036;
+
+       i {
+         font-weight: 900;
+       }
+
+
+       abbr {
+         display: none;
+       }
+
+       ul {
+         list-style: none;
+         position: absolute;
+         bottom: -40px;
+         background: wheat;
+         box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.425);
+         padding: 10px 10px;
+       }
+
+       ul li {
+         font-family: $my_font;
+         font-weight: 400;
+         text-transform: capitalize;
+         margin: 5px 0;
+       }
+     }
+
+     &:hover abbr {
+       display: block;
+     }
+
+   }
+ }
+
+
+
+
+ @media screen and (max-Width:1100px) and (min-width:800px) {
+   .inp {
+     width: 60%;
+   }
+
+   .result {
+     width: 90%;
+     justify-content: center;
+   }
+ }
+
+ @media screen and (max-Width:800px) and (min-width:500px) {
+   .inp {
+     width: 80%;
+     padding: 10px;
+   }
+
+   .result {
+     width: 90%;
+     justify-content: center;
+   }
+ }
+
+ @media screen and (max-Width:500px) and (min-width:100px) {
+   .inp {
+     width: 95%;
+     padding: 10px;
+   }
+
+   .result {
+     justify-content: center;
+   }
+
+   .result .col {
+     width: 100%;
+   }
+
+   .inp_result {
+     word-wrap: warp;
+   }
+
+ }
